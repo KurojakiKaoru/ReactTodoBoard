@@ -54,7 +54,7 @@ export default function App() {
 
     return (
         <>
-            <h1 className='title'>Todo List Board</h1>
+            <h1 className='title'>Todo Board</h1>
             <br className='divider' />
             
             <TodoBoard todos={todos} openNewModal={setNewItemModal} openEditModal={setEditItemModal} editModal={setEditItemModal} deleteTodo={deleteTodo} setEditItem={setEditItem}/>
