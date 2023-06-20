@@ -1,11 +1,20 @@
+:root {
+    --body-bg: #2e2e2e;
+    --modal-bg: rgba(48, 48, 48, 0.4);
+    --form-bg: #242424;
+    --primary-color: #ffb3db;
+}
+
+
+
 * {
     font-family: Arial, Helvetica, sans-serif;
     box-sizing: border-box;
 }
   
 body {
-    background: #2e2e2e;
-    color: #ffb3db;
+    background: var(--body-bg);
+    color: var(--primary-color);
     max-width: 1200px;
     padding: 1rem;
     margin: 1rem auto;
@@ -16,11 +25,6 @@ body {
 .title {
     text-align: center;
 }
-.new-item-form {
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-}
   
 .form-row {
     display: flex;
@@ -30,12 +34,13 @@ body {
 .form-footer {
     display: flex;
     justify-content: center;
+    flex-wrap: wrap;
 }
   
 .btn {
     background: hsl(308, 100%, 83%, 0.1);
     border: 1px solid hsl(308, 100%, 83%);
-    color: hsl(308, 100%, 83%);
+    color: var(--primary-color);
     padding: 0.25em 0.5em;
     border-radius: 0.25em;
     cursor: pointer;
@@ -60,6 +65,13 @@ body {
 .btn.btn-danger:hover,
 .btn.btn-danger:focus-visible {
     background: hsl(0, 100%, 40%, 0.2);
+}
+
+.item-form {
+    display: flex;
+    
+    flex-direction: column;
+    gap: 0.5rem;
 }
   
 .item-form input {
@@ -89,7 +101,7 @@ body {
 
   
 .item-form select:focus {
-    border: hsl(335, 100%, 85%);
+    border: 1px solid var(--primary-color);
 }
   
 .header {
@@ -193,7 +205,7 @@ body {
 }
   
 .modal-container {
-    width: 500px;
+    max-width: 500px;
     height: fit-content;
     border-radius: 12px;
     background-color: #292929;
@@ -209,7 +221,7 @@ body {
 }
   
 .modal-btn {
-    width: 150px;
+    width: fit-content;
     height: 45px;
     margin: 10px;
     border: none;
@@ -260,5 +272,16 @@ body {
 
      to {
         opacity: 1;
+    }
+}
+
+@media screen and (max-width: 300px) {
+    .todo-category {
+        min-width: 100%;
+        max-width: 100%;
+    }
+
+    .modal-btn {
+        width: 100%;
     }
 }
